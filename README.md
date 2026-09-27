@@ -42,8 +42,10 @@ The exact dataset copy used in the project (a Google Drive folder, `Metal Surfac
 
 **Classes (7):** Crazing, Hole, Inclusion, Patches, Pitted, Rolled, Scratches.
 
-- **Six classes** (all except Hole) are consistent with the public Kaggle packaging [NEU Metal Surface Defects Data](https://www.kaggle.com/datasets/fantacher/neu-metal-surface-defects-data) of the NEU steel surface defect database (Song & Yan, 2013). That packaging has 300 images per class, split into `train` 276 / `valid` 12 / `test` 12. The earlier 6-class experiment in this repository used it directly and printed matching counts (1,656 / 72 / 72).
+- **Six classes** (all except Hole) are consistent with the Kaggle packaging "NEU Metal Surface Defects Data" of the NEU steel surface defect database (Song & Yan, 2013; see [References](#references)). That packaging has 300 images per class, split into `train` 276 / `valid` 12 / `test` 12. The earlier 6-class experiment in this repository used it directly and printed matching counts (1,656 / 72 / 72). **This packaging is no longer available on Kaggle.**
 - **Hole** was added by me (219 images in total). **Its source was not documented and could not be recovered.**
+
+**Accessible alternative source:** the NEU images are still available in a different Kaggle packaging, the [NEU Surface Defect Database](https://www.kaggle.com/datasets/kaustubhdikshit/neu-surface-defect-database). This packaging uses a different train/validation split and includes detection annotations, so the split used in this project **cannot be reproduced exactly** from it.
 
 **The roles of the split folders were swapped on purpose.** I wanted to test how well transfer learning works with very little training data, so the code trains on the small folder named `test` and evaluates on the large folder named `train`. The folder names were left unchanged, so in the code they read as swapped:
 
@@ -138,7 +140,7 @@ The model was exported to TensorFlow Lite (dynamic-range quantization) and used 
 
 - **The archival notebook** ([`notebooks/metal_surface_vgg16_tubitak_2209b.ipynb`](notebooks/metal_surface_vgg16_tubitak_2209b.ipynb)) is the only source of the reported 7-class result. Its code and saved outputs are preserved unchanged.
 - **The Kaggle notebook** ([kaggle.com/code/turhangksu/vgg16-on-neu-steel-defects-6-class-early-run](https://www.kaggle.com/code/turhangksu/vgg16-on-neu-steel-defects-6-class-early-run)) is an earlier 6-class NEU-only experiment (100% on a 72-image test set). It does not reproduce the 7-class result.
-- **The exact data cannot be reproduced.** The project's dataset copy is no longer available, and the Hole source is undocumented. The six NEU classes are publicly available (see [Dataset](#dataset)).
+- **The exact data cannot be reproduced.** The project's dataset copy and the Kaggle packaging it was based on are no longer available, and the Hole source is undocumented. The NEU images themselves are still available through a different packaging with a different split, so the project's split cannot be recreated exactly (see [Dataset](#dataset)).
 - **Environment:** Google Colab, Python 3.10, TensorFlow 2.x, and `tensorflow_addons` 0.23.0 (see [`requirements.txt`](requirements.txt)). `tensorflow_addons` is end-of-life. Current Keras versions provide `AdamW` natively (`keras.optimizers.AdamW`).
 - Training was not re-run for this documentation update.
 
