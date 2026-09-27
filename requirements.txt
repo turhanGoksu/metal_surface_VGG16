@@ -1,0 +1,14 @@
+# Approximate environment of the original run (Google Colab, Python 3.10, GPU runtime).
+# Exact package versions were not recorded in the notebook; only tensorflow-addons was
+# installed explicitly (0.23.0). The ranges below are a best-effort reconstruction.
+#
+# NOTE: tensorflow-addons is end-of-life and no longer maintained. It only supports
+# TensorFlow 2.13-2.15. Recent Keras versions include AdamW natively
+# (keras.optimizers.AdamW), which would be the replacement today.
+tensorflow>=2.13,<2.16
+tensorflow-addons==0.23.0
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn

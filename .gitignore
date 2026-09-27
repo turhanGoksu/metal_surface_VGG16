@@ -1,0 +1,14 @@
+# Local-only comparison copies (never commit)
+_colab_copy/
+_kaggle_copy/
+
+# OS / editor files
+.DS_Store
+
+# Jupyter / Python
+.ipynb_checkpoints/
+__pycache__/
+
+# Model artifacts (not part of this repository)
+*.h5
+*.tflite
