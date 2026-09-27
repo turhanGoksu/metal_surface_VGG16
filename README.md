@@ -137,7 +137,7 @@ The model was exported to TensorFlow Lite (dynamic-range quantization) and used 
 ## Reproducibility
 
 - **The archival notebook** ([`notebooks/metal_surface_vgg16_tubitak_2209b.ipynb`](notebooks/metal_surface_vgg16_tubitak_2209b.ipynb)) is the only source of the reported 7-class result. Its code and saved outputs are preserved unchanged.
-- **The Kaggle notebook** ([kaggle.com/code/turhangksu/metal-surface-vgg16](https://www.kaggle.com/code/turhangksu/metal-surface-vgg16)) is an earlier 6-class NEU-only experiment (100% on a 72-image test set). It does not reproduce the 7-class result.
+- **The Kaggle notebook** ([kaggle.com/code/turhangksu/vgg16-on-neu-steel-defects-6-class-early-run](https://www.kaggle.com/code/turhangksu/vgg16-on-neu-steel-defects-6-class-early-run)) is an earlier 6-class NEU-only experiment (100% on a 72-image test set). It does not reproduce the 7-class result.
 - **The exact data cannot be reproduced.** The project's dataset copy is no longer available, and the Hole source is undocumented. The six NEU classes are publicly available (see [Dataset](#dataset)).
 - **Environment:** Google Colab, Python 3.10, TensorFlow 2.x, and `tensorflow_addons` 0.23.0 (see [`requirements.txt`](requirements.txt)). `tensorflow_addons` is end-of-life. Current Keras versions provide `AdamW` natively (`keras.optimizers.AdamW`).
 - Training was not re-run for this documentation update.
